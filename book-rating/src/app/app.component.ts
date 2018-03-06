@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'br';
+  title = 'Welt';
+
+  constructor() {
+    setTimeout(() => this.title = 'Heidelberg', 2000);
+  }
 }
