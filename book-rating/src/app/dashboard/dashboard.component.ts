@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'br-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
   url = 'https://angular.schule';
   d = new Date();
   books: Book[];
 
+  constructor(private bs: BookStoreService) {}
+
   ngOnInit() {
-    this.books = [
-      new Book('000', 'Angular', 'Grundlagen, fortgeschritttene Techniken, ...', 5),
-      new Book('111', 'React', 'Ein anderes Framework', 3)
-    ];
+    this.books = this.bs.getAllStatic();
     this.reorderBooks();
   }
 

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { initIcons } from './fa-icons';
+import { BookStoreService } from './shared/book-store.service';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { initIcons } from './fa-icons';
     AppRoutingModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'de' }
+    { provide: LOCALE_ID, useValue: 'de' },
+    BookStoreService
   ],
   bootstrap: [AppComponent]
 })
