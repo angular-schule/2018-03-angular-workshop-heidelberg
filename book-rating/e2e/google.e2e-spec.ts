@@ -1,5 +1,5 @@
 import { GooglePage } from './google.po';
-import { browser } from 'protractor';
+import { browser, $$ } from 'protractor';
 
 describe('Google', () => {
   let googlePage: GooglePage;
@@ -18,6 +18,8 @@ describe('Google', () => {
 
     expect(box.getText())
       .toContain('Großstadt in Baden-Württemberg');
+
+    // const telMueller = $$('tr').get(3).$$('td').get(4).getText();
   });
 
   afterAll(() => browser.waitForAngularEnabled(true));
