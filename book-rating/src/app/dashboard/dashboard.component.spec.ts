@@ -2,17 +2,29 @@ import { BookComponent } from './../book/book.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { BookStoreService } from '../shared/book-store.service';
 
-describe('DashboardComponent', () => {
+fdescribe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
+
+  const bssMock = {
+    getAllStatic: () => {
+      console.log('BSS MOCK');
+      return [];
+    }
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         DashboardComponent,
         BookComponent
-      ]
+      ],
+      providers: [
+        { provide: BookStoreService, useValue: bssMock }
+      ],
     })
     .compileComponents();
   }));
