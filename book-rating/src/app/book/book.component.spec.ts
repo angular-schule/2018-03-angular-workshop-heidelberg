@@ -23,13 +23,10 @@ describe('BookComponent', () => {
 
     // thats a unit test
     component.book = {
-      isbn: '000',
       title: 'Test',
       description: '',
-      rating: 1,
-      rateUp: () => {},
-      rateDown: () => {}
-    };
+      rating: 1
+    } as Book;
     fixture.detectChanges();
   });
 
