@@ -16,11 +16,15 @@
 
     <p>{{ book.description }}</p>
 
-    <button class="btn btn-secondary mr-2" (click)="rateDown()">
+    <button
+      [disabled]="book.rating < 2"
+      class="btn btn-secondary mr-2" (click)="rateDown()">
       <span class="fas fa-thumbs-down"></span>
     </button>
 
-    <button class="btn btn-danger" (click)="rateUp()">
+    <button
+      [disabled]="book.rating > 4"
+      class="btn btn-danger" (click)="rateUp()">
       <span class="fas fa-thumbs-up"></span>
     </button>
 
