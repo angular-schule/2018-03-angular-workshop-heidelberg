@@ -10,13 +10,19 @@
         </h2>
     </div>
 
-    <span *ngFor="let r of getStars()">*</span>
+    <span *ngFor="let r of getStars()">
+      <span class="fas fa-star"></span>
+    </span>
 
     <p>{{ book.description }}</p>
 
-    <!-- achtung: schlechter code! -->
-    <button class="btn btn-secondary mr-2" (click)="book.rating = book.rating - 1">-1</button>
-    <button class="btn btn-danger" (click)="book.rating = book.rating + 1">+1</button>
+    <button class="btn btn-secondary mr-2" (click)="rateDown()">
+      <span class="fas fa-thumbs-down"></span>
+    </button>
+
+    <button class="btn btn-danger" (click)="rateUp()">
+      <span class="fas fa-thumbs-up"></span>
+    </button>
 
   </div>
 </div>

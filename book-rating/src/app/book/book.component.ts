@@ -6,18 +6,20 @@ import { Book } from '../shared/book';
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.scss']
 })
-export class BookComponent implements OnInit {
+export class BookComponent {
 
   @Input()
   book: Book;
 
-  constructor() { }
+  rateDown() {
+    this.book.rateDown();
+  }
 
-  ngOnInit() {
+  rateUp() {
+    this.book.rateDown();
   }
 
   getStars() {
     return new Array(this.book.rating);
   }
-
 }
