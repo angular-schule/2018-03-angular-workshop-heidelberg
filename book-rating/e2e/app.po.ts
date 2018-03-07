@@ -2,7 +2,13 @@ import { browser, by, element } from 'protractor';
 
 export class AppPage {
   navigateTo() {
-    return browser.get('/');
+    browser.get('/');
+    return this;
+  }
+
+  goToDashboard() {
+    browser.get('/');
+    return new DashboardPage();
   }
 
   getParagraphText() {
