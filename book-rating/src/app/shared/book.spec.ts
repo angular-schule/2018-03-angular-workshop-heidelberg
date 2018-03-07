@@ -1,6 +1,6 @@
 import { Book } from './book';
 
-fdescribe('Book', () => {
+describe('Book', () => {
 
   let book: Book;
   beforeEach(() => book = new Book('0', '', ''));
