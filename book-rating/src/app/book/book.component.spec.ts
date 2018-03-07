@@ -17,20 +17,22 @@ describe('BookComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookComponent);
     component = fixture.componentInstance;
+  });
 
-    // this would be an integration test
-    // component.book = new Book('', 'TESTING!', '');
+  it('should call book.rateUp on component.rateUp', () => {
 
-    // thats a unit test
     component.book = {
       title: 'Test',
       description: '',
-      rating: 1
+      rating: 1,
+      rateUp: () => { }
     } as Book;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    spyOn(component.book, 'rateUp');
+    fixture.detectChanges();
+
+    component.rateUp();
+    expect(component.book.rateUp).toHaveBeenCalled();
+
   });
 });
