@@ -1,3 +1,4 @@
+import { Book } from './../shared/book';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookComponent } from './book.component';
@@ -16,6 +17,19 @@ describe('BookComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookComponent);
     component = fixture.componentInstance;
+
+    // this would be an integration test
+    // component.book = new Book('', 'TESTING!', '');
+
+    // thats a unit test
+    component.book = {
+      isbn: '000',
+      title: 'Test',
+      description: '',
+      rating: 1,
+      rateUp: () => {},
+      rateDown: () => {}
+    };
     fixture.detectChanges();
   });
 
