@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import localeDe from '@angular/common/locales/de';
 import { registerLocaleData } from '@angular/common';
@@ -13,6 +14,7 @@ import { initIcons } from './fa-icons';
 import { BookStoreService } from './shared/book-store.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.component';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 
 @NgModule({
@@ -20,12 +22,14 @@ import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.compo
     AppComponent,
     DashboardComponent,
     BookComponent,
-    RxjsPlaygroundComponent
+    RxjsPlaygroundComponent,
+    CreateBookComponent
   ],
   imports: [   // Module werden importiert!
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [  // Services werden provided
     { provide: LOCALE_ID, useValue: 'de' },
