@@ -1,0 +1,39 @@
+
+<button (click)="sendRandom()">Send random</button>
+<button (click)="send42()">Send 42</button>
+<button (click)="showSecond = true">Send 42</button>
+
+<pre>
+  {{ cold$ | async }}
+</pre>
+
+
+<pre *ngIf="showSecond">
+  {{ cold$ | async }}
+</pre>
+
+
+
+
+
+<pre>
+  {{ subject$ | async }}
+</pre>
+PIPED:
+<pre>
+  {{ subjectPiped$ | async }}
+</pre>
+<pre>
+  {{ subjectPiped$ | async }}
+</pre>
+<pre>
+  {{ subjectPiped$ | async }}
+</pre>
+<pre>
+  {{ subjectPiped$ | async }}
+</pre>
+<pre>
+  {{ subjectPiped$ | async }}
+</pre>
+
+(Buch auf Seite 188: unsubscribe)

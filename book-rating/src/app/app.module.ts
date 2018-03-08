@@ -12,13 +12,15 @@ import { BookComponent } from './book/book.component';
 import { initIcons } from './fa-icons';
 import { BookStoreService } from './shared/book-store.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.component';
 
 
 @NgModule({
   declarations: [  // Components, Pipes, Direktiven werden deklariert
     AppComponent,
     DashboardComponent,
-    BookComponent
+    BookComponent,
+    RxjsPlaygroundComponent
   ],
   imports: [   // Module werden importiert!
     BrowserModule,
