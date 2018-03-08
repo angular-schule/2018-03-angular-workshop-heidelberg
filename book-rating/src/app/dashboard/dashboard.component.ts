@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   d = new Date();
   books: Book[] = []; // !
 
-  books$: Observable<Book[]>
+  books$: Observable<Book[]>;
 
   constructor(private bs: BookStoreService) {}
 
@@ -37,6 +37,12 @@ export class DashboardComponent implements OnInit {
   reorderBooks(book?: Book) {
     console.log('Folgendes Buch hat getriggert', book);
     this.books.sort((a, b) => b.rating - a.rating);
+  }
+
+  createBook(book: Book) {
+    this.books.push(book);
+    // this.bs.create(book).subscribe(/* ..*/)
+    this.reorderBooks();
   }
 
 }
