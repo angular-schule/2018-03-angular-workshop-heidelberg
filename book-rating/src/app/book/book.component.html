@@ -25,9 +25,11 @@
     <button
       test-rateUpButton
       [disabled]="book.rating > 4"
-      class="btn btn-danger" (click)="rateUp()">
+      class="btn btn-danger mr-2" (click)="rateUp()">
       <span class="fas fa-thumbs-up"></span>
     </button>
+
+    <a [routerLink]="['/book', book.isbn]" class="btn btn-info">Details</a>
 
   </div>
 </div>
