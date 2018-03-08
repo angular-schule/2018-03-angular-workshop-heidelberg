@@ -11,19 +11,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { initIcons } from './fa-icons';
 import { BookStoreService } from './shared/book-store.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [
+  declarations: [  // Components, Pipes, Direktiven werden deklariert
     AppComponent,
     DashboardComponent,
     BookComponent
   ],
-  imports: [
+  imports: [   // Module werden importiert!
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [
+  providers: [  // Services werden provided
     { provide: LOCALE_ID, useValue: 'de' },
     BookStoreService
   ],

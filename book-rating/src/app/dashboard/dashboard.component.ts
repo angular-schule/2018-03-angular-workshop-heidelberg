@@ -10,13 +10,16 @@ import { BookStoreService } from '../shared/book-store.service';
 export class DashboardComponent implements OnInit {
   url = 'https://angular.schule';
   d = new Date();
-  books: Book[];
+  books: Book[] = []; // !
 
   constructor(private bs: BookStoreService) {}
 
   ngOnInit() {
-    this.books = this.bs.getAllStatic();
-    this.reorderBooks();
+    this.bs.getAll().subscribe(books => {
+      this.books = books;
+      this.reorderBooks();
+    },
+    error => console.log('Fehler :-(', error));
   }
 
   reorderBooks(book?: Book) {
